@@ -15,9 +15,14 @@ const [plants, setPlants] = useState([])
 
   }, [])
 
+  function addPlant(newPlant){
+    setPlants([...plants, newPlant])
+
+  }
+
    return (
     <main>
-      <NewPlantForm />
+      <NewPlantForm onAddPlant={addPlant} />
       <Search />
       <PlantList plants={plants} />
     </main>
